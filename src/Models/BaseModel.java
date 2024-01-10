@@ -1,6 +1,9 @@
 package Models;
 
+import View.BaseScreen;
+
 public abstract class BaseModel {
+    private BaseScreen screen;
     private double result;
    public abstract void appendFirstNumber(String digit);
     public abstract void appendSecondNumber(String digit);
@@ -14,4 +17,8 @@ public abstract class BaseModel {
     public abstract String getResultAsString();
 
     public abstract boolean isOperatorSet();
+
+    public void setScreen(BaseScreen baseScreen) {
+        this.screen=baseScreen;
+    }
 }

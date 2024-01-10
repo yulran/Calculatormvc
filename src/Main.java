@@ -9,9 +9,11 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            CalculatorController calculatorController = new CalculatorController( new CalculatorScreen(controller), calculatorModel);
-            CalculatorScreen calculatorScreen = new CalculatorScreen( CalculatorController controller);
             CalculatorModel calculatorModel = new CalculatorModel();
+            CalculatorScreen calculatorScreen = new CalculatorScreen();
+            CalculatorController calculatorController = new CalculatorController(calculatorModel,calculatorScreen);
+
+
 
         });
         }

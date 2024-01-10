@@ -5,7 +5,6 @@ import View.BaseScreen;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public abstract class BaseController implements ActionListener {
@@ -13,7 +12,7 @@ public abstract class BaseController implements ActionListener {
     protected BaseModel model;
     protected BaseScreen baseScreen;
 
-    public BaseController(BaseModel model,BaseScreen baseScreen) {
+    public BaseController() {
         this.baseScreen = baseScreen;
         this.model = model;
         for (Component component : baseScreen.getButtonPanel().getComponents()) {

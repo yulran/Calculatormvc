@@ -13,9 +13,9 @@ public class CalculatorScreen extends BaseScreen {
     private JTextField display;
     private JPanel buttonPanel;
 
-    public CalculatorScreen(BaseController controller) {
+    public CalculatorScreen() {
         super();
-        this.controller = controller;
+
     }
 
 
@@ -52,6 +52,9 @@ public class CalculatorScreen extends BaseScreen {
     public void updateDisplay(String text) {
         display.setText(text);
 
+    }
+    public void setController(CalculatorController controller) {
+        this.controller = controller;
     }
 }
 

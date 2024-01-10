@@ -15,8 +15,10 @@ public class CalculatorController extends BaseController {
     protected CalculatorModel calculatorModel;
 
     public CalculatorController (BaseModel model, BaseScreen baseScreen) {
-        this.model=new CalculatorModel();
-        this.baseScreen= new CalculatorScreen(this);
+        this.model=model;
+        this.baseScreen= baseScreen;
+        baseScreen.setController(this);
+        model.setScreen(baseScreen);
     }
     private class DigitButtonClickListener implements ActionListener {
         @Override
@@ -32,7 +34,7 @@ public class CalculatorController extends BaseController {
                 model.appendSecondNumber(digit);
             }
 
-            // Обновляем представление с текущими числами
+            // Обновляем  числа
             calculatorScreen.updateDisplay(model.getCurrentInput());
         }
     }
@@ -51,7 +53,7 @@ public class CalculatorController extends BaseController {
         }
     }
 
-    // Добавим метод для вычисления результата и обновления представления
+    //  метод для вычисления результата и обновления представления
     public void calculateResult() {
         model.calculateResult();
         calculatorScreen.updateDisplay(model.getResultAsString());

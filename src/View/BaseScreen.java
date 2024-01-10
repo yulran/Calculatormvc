@@ -1,6 +1,7 @@
 package View;
 
 import Controller.BaseController;
+import Controller.CalculatorController;
 
 import javax.swing.*;
 import javax.swing.JPanel;
@@ -12,7 +13,6 @@ protected JTextField display;
     protected  BaseController controller;
     protected abstract void initComponents();
     public BaseScreen() {
-        this.controller = controller;
         JFrame frame = new JFrame("Калькулятор");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 400);
@@ -22,4 +22,8 @@ protected JTextField display;
     }
     public abstract JPanel getButtonPanel();
     public abstract void updateDisplay(String text);
+
+    public void setController(BaseController calculatorController) {
+        this.controller= calculatorController;
+    }
 }
